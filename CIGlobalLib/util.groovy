@@ -1,4 +1,4 @@
-import groovyx.net.http.RESTClient
+/*import groovyx.net.http.RESTClient*/
 
 def call(name){
     echo '''
