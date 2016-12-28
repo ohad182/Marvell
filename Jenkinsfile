@@ -4,7 +4,7 @@ pipeline {
   agent any
   stages {
     stage('Call another script'){
-      @Library('somelib')
+      @Library('CIGlobalLib')
     }
     stage('Build') { 
       steps{
