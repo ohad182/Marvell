@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-@Library('JenkinsCILib')
+
 
 pipeline {
   agent label : 'master'
@@ -15,7 +15,7 @@ pipeline {
     
     stage('Call Global Library'){
       steps{
-        helloWorld "ohad"
+        helloWorld("ohad")
       }
     }
       
