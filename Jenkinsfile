@@ -1,15 +1,14 @@
-node { // <1>
-    stage('Build') { // <2>
-        echo 'CPSS Branch'
-        sh 'make' // <3>
+node { 
+    stage('Build') { 
+        echo 'CPSS Build'
+        
     }
 
     stage('Test') {
-        sh 'make check'
-        junit 'reports/**/*.xml' // <4>
+        echo 'CPSS Test'
     }
 
     stage('Deploy') {
-        sh 'make publish'
+         echo 'CPSS Deploy'
     }
 }
