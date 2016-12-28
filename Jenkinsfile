@@ -5,7 +5,7 @@ pipeline {
       steps{
         echo 'MTS Build'
       }
-      }
+      
     }
 
     stage('Test') {
