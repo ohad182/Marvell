@@ -5,9 +5,10 @@ pipeline {
   stages {
     stage('Call another script'){
       steps{
-        
-        def externalCall = load("util.groovy")
-        externalCall("beer")
+        script{
+          def externalCall = load("util.groovy")
+          externalCall("beer")
+        }
       }
     }
     stage('Build') { 
