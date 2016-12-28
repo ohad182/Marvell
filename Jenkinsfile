@@ -4,8 +4,8 @@ pipeline {
   agent any
   stages {
     stage('Call another script'){
-      @Library('CIGlobalLib')
-      import CIGlobalLic.util
+      @Library('CIGlobalLib') import CIGlobalLic.util
+      util "master"
     }
     stage('Build') { 
       steps{
