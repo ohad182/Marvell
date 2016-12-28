@@ -5,6 +5,7 @@ pipeline {
   stages {
     stage('Call another script'){
       @Library('CIGlobalLib')
+      import CIGlobalLic.
     }
     stage('Build') { 
       steps{
