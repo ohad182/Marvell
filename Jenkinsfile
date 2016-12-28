@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 pipeline {
-  agent label : 'pt-lt0104'
+  agent label : 'pt-lt0582'
   stages {
     stage('Call another script'){
       steps{
