@@ -14,7 +14,7 @@ pipeline {
     
     stage('Call Global Library'){
       steps{
-        
+        echo 'stam'
       }
     }
       
