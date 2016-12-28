@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 pipeline {
-  agent any
+  agent label : 'master'
   stages {
     stage('Call another script'){
       steps{
