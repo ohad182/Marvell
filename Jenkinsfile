@@ -20,6 +20,15 @@ pipeline {
        }
       }
     }
+    
+    stage('Call Global Library 1'){
+      steps{
+       script{
+          helloWorld "5";
+         
+       }
+      }
+    }
       
     
     stage('Build') { 
