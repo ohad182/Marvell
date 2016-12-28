@@ -14,7 +14,8 @@ pipeline {
     
     stage('Call Global Library'){
       steps{
-        @Library('JenkinsCILib')("stam")
+        @Library('JenkinsCILib')
+        echo new stam("stam")
       }
     }
       
