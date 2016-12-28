@@ -1,15 +1,13 @@
-node { // <1>
-    stage('Build') { // <2>
-        echo 'MTS branch'
-        sh 'make' // <3>
+node {
+    stage('Build') { 
+        echo 'MTS Build'
     }
 
     stage('Test') {
-        sh 'make check'
-        junit 'reports/**/*.xml' // <4>
+       echo 'MTS Test'
     }
 
     stage('Deploy') {
-        sh 'make publish'
+        echo 'MTS Deploy'
     }
 }
