@@ -1,7 +1,6 @@
 #!/usr/bin/env groovy
-
-
 pipeline {
+  @Library('JenkinsCILib')
   agent label : 'master'
   stages {
     stage('Call another script'){
