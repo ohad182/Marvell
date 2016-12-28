@@ -12,7 +12,7 @@ pipeline {
       }
     }
     stage('Build') { 
-      steps{
+      steps{ 
         echo 'MTS Build'
       }
     }
