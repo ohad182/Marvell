@@ -1,6 +1,5 @@
 #!/usr/bin/env groovy
 pipeline {
- 
   agent label : 'master'
   stages {
     stage('Call another script'){
@@ -14,11 +13,11 @@ pipeline {
     
     stage('Call Global Library'){
       steps{
-       
+       script{
           acme.foo = "5";
           echo acme.foo; // print 5
           acme.say "Joe" // print "Hello world, Joe"
-        
+       }
       }
     }
       
