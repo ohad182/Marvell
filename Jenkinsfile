@@ -14,7 +14,6 @@ pipeline {
     
     stage('Call Global Library'){
       steps{
-        @Library('JenkinsCILib')
         
       }
     }
