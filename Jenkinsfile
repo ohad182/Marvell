@@ -16,7 +16,7 @@ pipeline {
       steps{
         script{
            @Library('JenkinsCILib')
-          helloWorld("ohad")
+          helloWorld "ohad"
         }
       }
     }
