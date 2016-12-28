@@ -15,8 +15,8 @@ pipeline {
     stage('Call Global Library'){
       steps{
         script{
-           @Library('JenkinsCILib')
            
+           helloWorld "ohad"
         }
       }
     }
