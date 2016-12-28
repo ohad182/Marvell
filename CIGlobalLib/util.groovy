@@ -11,12 +11,12 @@ def call(name){
  \_______) |__|  \___) \"_____/    \"_____/      \__/     |___/      
                                                                     
 '''
-  
+  /*
   def client = new RESTClient( 'http://artii.herokuapp.com/' )
   def resp = client.get( path : 'make?text=${name}&font=rockbox_' ) // ACME boomerang
 
   assert resp.status == 200  // HTTP response code; 404 means not found, etc.
   echo resp.getData()  
-     
+     */
   }
 return this
