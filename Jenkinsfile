@@ -1,4 +1,6 @@
-node {
+pipeline {
+  agent any
+  stages {
     stage('Build') { 
         echo 'MTS Build'
     }
@@ -10,4 +12,5 @@ node {
     stage('Deploy') {
         echo 'MTS Deploy'
     }
+  }
 }
