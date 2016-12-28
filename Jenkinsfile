@@ -11,6 +11,14 @@ pipeline {
         }
       }
     }
+    
+    stage('Call Global Library'){
+      steps{
+        @Library('JenkinsCILib')("stam")
+      }
+    }
+      
+    
     stage('Build') { 
       steps{ 
         echo 'MTS Build'
