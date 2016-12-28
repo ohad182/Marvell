@@ -1,4 +1,5 @@
 #!/usr/bin/env groovy
+@Library('JenkinsCILib')
 
 pipeline {
   agent label : 'master'
