@@ -5,7 +5,7 @@ pipeline {
   stages {
     stage('Call another script'){
      
-      def stam = load 'CIGlobalLic/util'
+      def stam = load 'CIGlobalLic/util.groovy'
       stam "master"
     }
     stage('Build') { 
