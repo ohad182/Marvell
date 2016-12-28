@@ -4,9 +4,10 @@ pipeline {
   agent any
   stages {
     stage('Call another script'){
-     
-      def stam = load 'CIGlobalLic/util.groovy'
-      stam "master"
+      steps{
+         def stam = load 'CIGlobalLic/util.groovy'
+         stam "master"
+      }
     }
     stage('Build') { 
       steps{
