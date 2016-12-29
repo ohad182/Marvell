@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-libraryResource 'acme'
+
 pipeline {
   agent label : 'pt-lt0582'
   stages {
@@ -14,6 +14,7 @@ pipeline {
     
     stage('Call Global Library'){
       steps{
+        libraryResource 'vars/acme.groovy'
        script{
           acme.foo = "5";
           echo acme.foo; // print 5
