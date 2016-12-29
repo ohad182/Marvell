@@ -1,4 +1,5 @@
 #!/usr/bin/env groovy
+libraryResource 'acme'
 pipeline {
   agent label : 'pt-lt0582'
   stages {
