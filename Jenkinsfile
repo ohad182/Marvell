@@ -25,10 +25,10 @@ pipeline {
 
     stage('Call Global Library 1'){
       steps{
-    //   script{
+       script{
           helloWorld "5";
          
-   //    }
+       }
       }
     }
       
