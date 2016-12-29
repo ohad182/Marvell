@@ -1,4 +1,5 @@
-#!/usr/bin/env groovy
+#!groovy
+@Library('github.com/ohad182/JenkinsCILib')
 
 pipeline {
   agent label : 'pt-lt0582'
@@ -15,11 +16,11 @@ pipeline {
     stage('Call Global Library'){
       steps{
        
-      // script{
+       script{
           acme.foo = "5";
           echo acme.foo; // print 5
           acme.say "Joe" // print "Hello world, Joe"
-     //  }
+       }
       }
     }
     
