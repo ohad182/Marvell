@@ -1,5 +1,5 @@
 #!groovy
-@Library('github.com/ohad182/JenkinsCILib')
+@Library('github.com/ohad182/JenkinsCILib') _
 
 pipeline {
   agent label : 'pt-lt0582'
