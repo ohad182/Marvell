@@ -12,16 +12,16 @@ pipeline {
       }
     }
     
-    stage('Call Global Library'){
-      steps{
-       
-       script{
-          acme.foo = "5";
-          echo acme.foo; // print 5
-          acme.say "Joe" // print "Hello world, Joe"
-       }
-      }
-    }
+//stage('Call Global Library'){
+//  steps{
+//   
+//     script{
+//        acme.foo = "5";
+//        echo acme.foo; // print 5
+//        acme.say "Joe" // print "Hello world, Joe"
+//     }
+//  }
+//}
     
     stage('Call Global Library 1'){
       steps{
