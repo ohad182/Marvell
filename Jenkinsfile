@@ -14,8 +14,6 @@ pipeline {
     
 stage('Call Global Library - print details'){
   steps{
-       @Library('JenkinsCILib') _
-      
      script{
        
         def fileUtils = new com.marvell.ciutils.FileUtils()
