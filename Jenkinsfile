@@ -16,7 +16,7 @@ stage('Call Global Library - print details'){
   steps{
    
      script{
-       @Library('JenkinsCILib')
+       @Library('JenkinsCILib') _
        import com.marvell.utils.FileUtils
         def fileUtils = new FileUtils()
        fileUtils.printInfo()
