@@ -14,10 +14,10 @@ pipeline {
     
 stage('Call Global Library - print details'){
   steps{
-   
-     script{
        @Library('JenkinsCILib') _
        import com.marvell.ciutils.FileUtils
+     script{
+       
         def fileUtils = new FileUtils()
        fileUtils.printInfo()
      }
