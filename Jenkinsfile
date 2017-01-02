@@ -12,7 +12,7 @@ pipeline {
       }
     }
     
-    stage('Call Global Library - print details'){
+    stage('Call Global Library - print something'){
   steps{
      script{
        
