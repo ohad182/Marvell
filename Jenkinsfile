@@ -12,6 +12,16 @@ pipeline {
       }
     }
     
+    stage('Call Global Library - print details'){
+  steps{
+     script{
+       
+        def fileUtils = new com.marvell.ciutils.FileUtils()
+       fileUtils.printSomething()
+     }
+  }
+}
+    
 stage('Call Global Library - print details'){
   steps{
      script{
