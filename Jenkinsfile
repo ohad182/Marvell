@@ -32,6 +32,12 @@ stage('Call Global Library - print details'){
   }
 }
 
+    stage('user Library 1'){
+      steps{
+       bat "echo %USERNAME%"
+      }
+    }
+    
     stage('Call Global Library 1'){
       steps{
        script{
