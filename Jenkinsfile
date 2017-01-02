@@ -6,8 +6,8 @@ pipeline {
     stage('Call another script'){
       steps{
         script{
-          def externalCall = load("CIGlobalLib\\util.groovy")
-          externalCall("beer")
+          def externalCall = load "CIGlobalLib/util.groovy"
+          externalCall("external call")
         }
       }
     }
