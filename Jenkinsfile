@@ -16,8 +16,8 @@ pipeline {
   steps{
      script{
        
-        def fileUtils = new com.marvell.ciutils.FileUtils()
-       fileUtils.printSomething(this)
+        def fileUtils = new com.marvell.ciutils.FileUtils(this)
+       fileUtils.printSomething()
      }
   }
 }
@@ -26,8 +26,8 @@ stage('Call Global Library - print details'){
   steps{
      script{
        
-        def fileUtils = new com.marvell.ciutils.FileUtils(steps)
-       fileUtils.printInfo(this)
+        def fileUtils = new com.marvell.ciutils.FileUtils(this)
+       fileUtils.printInfo()
      }
   }
 }
