@@ -16,7 +16,7 @@ stage('Call Global Library - print details'){
   steps{
      script{
        
-        def fileUtils = new com.marvell.ciutils.FileUtils(steps)
+        def fileUtils = new com.marvell.ciutils.FileUtils()
        fileUtils.printInfo(this)
      }
   }
