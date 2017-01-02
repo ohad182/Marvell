@@ -17,7 +17,7 @@ pipeline {
      script{
        
         def fileUtils = new com.marvell.ciutils.FileUtils()
-       fileUtils.printSomething()
+       fileUtils.printSomething(this)
      }
   }
 }
