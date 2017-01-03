@@ -2,6 +2,9 @@
 
 pipeline {
   agent label : 'pt-lt0582'
+   parameters {
+        booleanParam(defaultValue: true, description: '', name: 'flag')
+    }
   stages {
 //    stage('Call another script'){
 //      steps{
