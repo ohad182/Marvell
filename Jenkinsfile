@@ -32,11 +32,11 @@ pipeline {
 //  }
 //}
 //
-//    stage('user Library 1'){
-//      steps{
-//       bat "echo USER=%USERNAME%"
-//      }
-//    }
+    stage('user name'){
+      steps{
+       bat "echo USER=%USERNAME%"
+      }
+    }
 //    
 //    stage('Call Global Library 1'){
 //      steps{
