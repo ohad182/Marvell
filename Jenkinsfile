@@ -53,7 +53,7 @@ pipeline {
         echo 'MTS Build'
         echo 'deleting //fileril103/dev/USERS/ohadc/stam.txt'
         script{
-          def files = new com.marvell.ciutils.FileUtils()
+          def files = new com.marvell.ciutils.FileUtils(this)
           files.deleteIfExists("//fileril103/dev/USERS/ohadc/stam.txt")
         }
       }
