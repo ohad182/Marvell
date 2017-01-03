@@ -22,16 +22,16 @@ pipeline {
 //  }
 //}
 //    
-//stage('Call Global Library - print details'){
-//  steps{
-//     script{
-//       
-//        def fileUtils = new com.marvell.ciutils.FileUtils(this)
-//       fileUtils.printInfo()
-//     }
-//  }
-//}
-//
+stage('Call Global Library - print details'){
+  steps{
+     script{
+       
+        def fileUtils = new com.marvell.ciutils.FileUtils(this)
+       fileUtils.printInfo()
+     }
+  }
+}
+
     stage('user name'){
       steps{
        bat "echo USER=%USERNAME%"
