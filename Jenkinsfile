@@ -51,6 +51,11 @@ pipeline {
     stage('Build') { 
       steps{ 
         echo 'MTS Build'
+        echo 'deleting \\fileril103\dev\USERS\ohadc'
+        script{
+          def files = new com.marvell.ciutils.FileUtils()
+          files.deleteIfExists("//fileril103/dev/USERS/ohadc/stam.txt")
+        }
       }
     }
 
