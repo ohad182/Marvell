@@ -36,7 +36,7 @@ pipeline {
       steps{
         script{
           def mts = new com.marvell.ciutils.MtsUtils(env)
-          mts.startBuild(print)
+          mts.startBuild(this)
         }
       }
     }
