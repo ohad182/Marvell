@@ -5,9 +5,9 @@ pipeline {
   stages {
     stage('Build') { 
       steps{
-        echo 'MTS Build'
+          def mts = new com.marvell.ciutils.MtsUtils(this)
+          mts.startBuild()
       }
-      
     }
 
     stage('Test') {
