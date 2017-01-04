@@ -5,8 +5,10 @@ pipeline {
   stages {
     stage('Build') { 
       steps{
+        script{
           def mts = new com.marvell.ciutils.MtsUtils(this)
           mts.startBuild()
+        }
       }
     }
 
