@@ -50,8 +50,9 @@ stage('Call Global Library - print details'){
     
     stage('Build') { 
       steps{ 
-        echo '''MTS Build
-                deleting //fileril103/dev/USERS/ohadc/stam.txt
+        echo '''
+MTS Build
+deleting //fileril103/dev/USERS/ohadc/stam.txt
           '''
         script{
           def files = new com.marvell.ciutils.FileUtils(this)
