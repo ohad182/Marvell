@@ -28,7 +28,7 @@ stage('Call Global Library - print details'){
        fileUtils.printInfo()
      }
   }
-}
+
 
     stage('user name'){
       steps{
