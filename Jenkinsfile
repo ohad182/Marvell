@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-pipeline(description: 'the pipeline description'){
+pipeline {
   agent any
   properties {
         buildDiscarder(logRotator(numToKeepStr:'25'))
@@ -37,7 +37,7 @@ pipeline(description: 'the pipeline description'){
       steps{
         script{
           def mts = new com.marvell.ciutils.MtsUtils(env)
-          mts.startBuild(this)
+          mts.startBuild(script)
         }
       }
     }
