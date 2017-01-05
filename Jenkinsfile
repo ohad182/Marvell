@@ -5,7 +5,6 @@ pipeline {
   properties {
         buildDiscarder(logRotator(numToKeepStr:'25'))
     }
-  PipelineProperty(description('the description'))
   
   parameters {
         stringParam(defaultValue: 'cisco_tesla_bx', description: '', name: 'BOX_NAME')
