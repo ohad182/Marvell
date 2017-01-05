@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-pipeline {
+pipeline(description: 'the pipeline description'){
   agent any
   properties {
         buildDiscarder(logRotator(numToKeepStr:'25'))
