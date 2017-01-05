@@ -37,7 +37,6 @@ stage('Call Global Library - print details'){
        bat "echo USER=%USERNAME%"
       }
     }
-//    
 //    stage('Call Global Library 1'){
 //      steps{
 //       script{
