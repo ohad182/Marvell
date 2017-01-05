@@ -4,8 +4,9 @@ pipeline {
   agent any
   properties {
         buildDiscarder(logRotator(numToKeepStr:'25'))
-        buildDescriptor('the description')
     }
+  PipelineProperty(description('the description'))
+  
   parameters {
         stringParam(defaultValue: 'cisco_tesla_bx', description: '', name: 'BOX_NAME')
         stringParam(defaultValue: 'cisco_tesla_bx_v2.3', description: '', name: 'BOX_BRANCH')
