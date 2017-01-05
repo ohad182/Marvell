@@ -24,8 +24,6 @@ pipeline {
 //    
 stage('Call Global Library - print details'){
   steps{
-     script{
-       
         def fileUtils = new com.marvell.ciutils.FileUtils(this)
        fileUtils.printInfo()
      }
@@ -54,8 +52,15 @@ MTS Build
 deleting //fileril103/dev/USERS/ohadc/stam.txt
           '''
         script{
+          try{
           def files = new com.marvell.ciutils.FileUtils(this)
           print files.deleteIfExists("//fileril103/dev/USERS/ohadc/stam.txt")
+          }
+          catch(err)
+          {
+            print err
+          }
+          
         }
       }
     }
@@ -74,6 +79,18 @@ deleting //fileril103/dev/USERS/ohadc/stam.txt
       steps{
         echo 'MTS Deploy'
       }
+    }
+  }
+  
+  post {
+    always {
+      print 'always'
+    }
+    success {
+      print 'pipeline success'
+    }
+    failure {
+      print 'pipeline failed'
     }
   }
 }
