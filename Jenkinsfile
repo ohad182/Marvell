@@ -32,6 +32,7 @@ deleting //fileril103/dev/USERS/ohadc/stam.txt
           catch(err)
           {
             print err
+            currentBuild.result = UNSTABLE
           }
           
         }
