@@ -8,12 +8,12 @@ def startBuild(env, steps){
 
 def compile(env, steps){
    def mts = new MtsUtils(env, steps)
-   mtsi.compilationProcess()
+   mts.compilationProcess()
 }
 
 def build(env, steps){
    def mts = new MtsUtils(env, steps)
-   mtsi.buildProcess()
+   mts.buildProcess()
 }
 
 pipeline {
