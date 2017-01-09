@@ -6,6 +6,15 @@ def startBuild(env, steps){
    mts.startBuild()
 }
 
+def compile(env, steps){
+   def mts = new MtsUtils(env, steps)
+   mtsi.compilationProcess()
+}
+
+def build(env, steps){
+   def mts = new MtsUtils(env, steps)
+   mtsi.buildProcess()
+}
 
 pipeline {
   agent any
@@ -50,15 +59,9 @@ pipeline {
     stage('Compilation & Build') {
       steps{
         parallel 'Compilation': {
-          script{
-            def mtsi = new MtsUtils(env, steps)
-            mtsi.compilationProcess()
-          }
+         compile(env, steps)
         }, 'Build': {
-          script {
-            def mtsi = new MtsUtils(env, steps)
-            mtsi.buildProcess()
-          }
+          build(env, steps)
         }
       }
     }
