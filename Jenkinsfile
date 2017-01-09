@@ -11,7 +11,7 @@ def compile(env, steps){
    mts.compilationProcess()
 }
 
-def build(env, steps){
+def buildMts(env, steps){
    def mts = new MtsUtils(env, steps)
    mts.buildProcess()
 }
@@ -61,7 +61,7 @@ pipeline {
         parallel 'Compilation': {
          compile(env, steps)
         }, 'Build': {
-          build(env, steps)
+          buildMts(env, steps)
         }
       }
     }
