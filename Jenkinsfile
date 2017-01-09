@@ -44,12 +44,20 @@ pipeline {
       }
     }
     
-    stage('Compilation') {
+    stage('Compilation & Build') {
       steps{
-        script{
-          def mts = new com.marvell.ciutils.MtsUtils(env, steps)
-          mts.compilationProcess()
-        }
+        parallel 'Compilation':{
+          script{
+            def mts = new com.marvell.ciutils.MtsUtils(env, steps)
+            mts.compilationProcess()
+          }
+        },
+          'Build':{
+            script{
+              def mts = new com.marvell.ciutils.MtsUtils(env, steps)
+              mts.buildProcess()
+            }
+          }
       }
     }
     }
