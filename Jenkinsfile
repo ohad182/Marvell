@@ -41,7 +41,16 @@ pipeline {
         }
       }
     }
-
+    
+    stage('Compilation'){
+      steps{
+        script{
+          def mts = new com.marvell.ciutils.MtsUtils(env)
+          mts.compilationProcess(manager)
+        }
+      }
+    }
+    
     stage('Test') {
       steps{
        echo 'MTS Test'
