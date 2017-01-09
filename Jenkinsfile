@@ -36,12 +36,11 @@ pipeline {
   
   stages {
    
-    stage('Build') { 
+    stage('Pre-Build') { 
       steps{
-        script{
+       
           def mts = new MtsUtils(env, steps)
           mts.startBuild()
-        }
       }
     }
     
