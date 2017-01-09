@@ -37,7 +37,7 @@ pipeline {
       steps{
         script{
           def mts = new com.marvell.ciutils.MtsUtils(env, steps)
-          mts.startBuild(this)
+          mts.startBuild()
         }
       }
     }
@@ -46,7 +46,7 @@ pipeline {
       steps{
         script{
           def mts = new com.marvell.ciutils.MtsUtils(env, steps)
-          mts.compilationProcess(this)
+          mts.compilationProcess()
         }
       }
     }
