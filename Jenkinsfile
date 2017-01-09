@@ -42,7 +42,7 @@ pipeline {
           mts.startBuild()
         }
       }
-    },
+    }
     
     stage('Compilation') {
       steps{
