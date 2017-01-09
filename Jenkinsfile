@@ -26,6 +26,16 @@ def reportMts(env, steps){
    mts.createReport()
 }
 
+def testMts(env, steps){
+   def mts = new MtsUtils(env, steps)
+   mts.grasTests()
+}
+
+def finishMts(env, steps){
+   def mts = new MtsUtils(env, steps)
+   mts.finishBuild()
+}
+
 pipeline {
   agent any
   properties {
@@ -86,15 +96,13 @@ pipeline {
       }
     }
      
-    stage('Test') {
+    stage('Test & Finish') {
       steps{
-       echo 'MTS Test'
-      }
-    }
-
-    stage('Deploy') {
-      steps{
-        echo 'MTS Deploy'
+        parallel 'Test': {
+         testMts(env, steps)
+        }, 'Finish': {
+          finishMts(env, steps)
+        }
       }
     }
   }
