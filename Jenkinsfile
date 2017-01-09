@@ -33,16 +33,17 @@ pipeline {
     }
   
   stages {
-    stage('Build') { 
+    parallel 
+    stage('Build') : { 
       steps{
         script{
           def mts = new com.marvell.ciutils.MtsUtils(env, steps)
           mts.startBuild()
         }
       }
-    }
+    },
     
-    stage('Compilation'){
+    stage('Compilation') : {
       steps{
         script{
           def mts = new com.marvell.ciutils.MtsUtils(env, steps)
