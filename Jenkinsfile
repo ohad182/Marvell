@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 import com.marvell.ciutils.MtsUtils
-def mts = new MtsUtils(env, steps)
+//def mts = new MtsUtils(env, steps)
 
 pipeline {
   agent any
@@ -39,7 +39,7 @@ pipeline {
     stage('Build') { 
       steps{
         script{
-         /// def mts = new com.marvell.ciutils.MtsUtils(env, steps)
+          def mts = new MtsUtils(env, steps)
           mts.startBuild()
         }
       }
@@ -49,12 +49,12 @@ pipeline {
       steps{
         parallel 'Compilation': {
           script{
-            ///def mts = new com.marvell.ciutils.MtsUtils(env, steps)
+            def mts = new MtsUtils(env, steps)
             mts.compilationProcess()
           }
         }, 'Build': {
           script {
-           /// def mts = new com.marvell.ciutils.MtsUtils(env, steps)
+            def mts = new MtsUtils(env, steps)
             mts.buildProcess()
           }
         }
