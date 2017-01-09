@@ -45,10 +45,15 @@ pipeline {
     
     stage('Compilation & Build') {
       steps{
+        parallel 'Compilation': {
           script{
             def mts = new com.marvell.ciutils.MtsUtils(env, steps)
             mts.compilationProcess()
-          }
+           }
+        }, 'Build': {
+          def mts = new com.marvell.ciutils.MtsUtils(env, steps)
+            mts.buildProcess()
+        }
         }
           
       }
