@@ -1,7 +1,8 @@
 #!/usr/bin/env groovy
 import com.marvell.ciutils.MtsUtils
-def mts = new MtsUtils(env, steps)
-def startBuild(){
+
+def startBuild(env, steps){
+   def mts = new MtsUtils(env, steps)
    mts.startBuild()
 }
 
@@ -42,7 +43,7 @@ pipeline {
    
     stage('Pre-Build') { 
       steps{
-       startBuild()
+       startBuild(env, steps)
       }
     }
     
