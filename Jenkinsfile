@@ -16,6 +16,16 @@ def buildMts(env, steps){
    mts.buildProcess()
 }
 
+def installMts(env, steps){
+   def mts = new MtsUtils(env, steps)
+   mts.installBmImage()
+}
+
+def reportMts(env, steps){
+   def mts = new MtsUtils(env, steps)
+   mts.createReport()
+}
+
 pipeline {
   agent any
   properties {
@@ -66,7 +76,16 @@ pipeline {
       }
     }
     
-    
+    stage('Install & Report') {
+      steps{
+        parallel 'Install': {
+         installMts(env, steps)
+        }, 'Report': {
+          reportMts(env, steps)
+        }
+      }
+    }
+     
     stage('Test') {
       steps{
        echo 'MTS Test'
