@@ -48,13 +48,13 @@ pipeline {
       steps{
         parallel 'Compilation': {
           script{
-            def mts = new MtsUtils(env, steps)
-            mts.compilationProcess()
+            def mtsi = new MtsUtils(env, steps)
+            mtsi.compilationProcess()
           }
         }, 'Build': {
           script {
-            def mts = new MtsUtils(env, steps)
-            mts.buildProcess()
+            def mtsi = new MtsUtils(env, steps)
+            mtsi.buildProcess()
           }
         }
       }
