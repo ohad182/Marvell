@@ -33,8 +33,7 @@ pipeline {
     }
   
   stages {
-    parallel 
-    {
+   
     stage('Build') { 
       steps{
         script{
@@ -46,21 +45,16 @@ pipeline {
     
     stage('Compilation & Build') {
       steps{
-        parallel 'Compilation':{
+        //parallel 'Compilation':{
           script{
             def mts = new com.marvell.ciutils.MtsUtils(env, steps)
             mts.compilationProcess()
           }
-        },
-          'Build':{
-            script{
-              def mts = new com.marvell.ciutils.MtsUtils(env, steps)
-              mts.buildProcess()
-            }
-          }
+        }
+          
       }
-    }
-    }
+    
+    
     stage('Test') {
       steps{
        echo 'MTS Test'
